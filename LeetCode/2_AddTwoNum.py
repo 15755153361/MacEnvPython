@@ -27,7 +27,7 @@ class Solution(object):
             return head
     def printLinkList(self,head):
         print("prepare to print")
-        p = head.next
+        p = head
         while(p is not None):
             print(p.val)
             p = p.next
@@ -37,16 +37,29 @@ class Solution(object):
             return l2
         if l2 is None:
             return l1
-        p = ListNode(-1)
-        tmp = l1.val + l2.val + self.flag
-        if tmp >= 10:
-            self.flag = 1
-        else:
-            self.flag = 0
-        p.val = tmp%10
-        print('p , p.val = ',p,p.val)
-        p.next = self.addTwoNumbers(l1.next,l2.next)
-        return p
+        head = ListNode(-1)
+        p = head
+        while l1 or l2:
+            su = 0
+            if l1:
+                su += l1.val
+                l1 = l1.next
+            if l2:
+                su += l2.val 
+                l2 = l2.next
+            su += self.flag
+            print('su = ',su)
+            self.flag =int(su/10)
+            print('self.flag = ',self.flag)
+            tmp = ListNode(-1)
+            tmp.val = su%10
+            print('tmp.val = ',tmp.val)
+            p.next = tmp
+            p = tmp
+        if self.flag == 1:
+            tmp = ListNode(self.flag)
+            p.next = tmp
+        return head
 class TestSolution(unittest.TestCase):
     def setUp(self):
         pass
@@ -60,7 +73,7 @@ class TestSolution(unittest.TestCase):
         l2 = Test.createLinkList()
         Test.printLinkList(l2)
         print('---------------------')
-        lv = Test.addTwoNumbers(l1,l2)
+        lv = Test.addTwoNumbers(l1.next,l2.next)
         print('lv = ',lv)
         Test.printLinkList(lv)
         pass
