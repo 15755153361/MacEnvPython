@@ -13,8 +13,8 @@ if __name__ == '__main__':
         p.start()
     end_time = time.time()
     print('Total Time = {}'.format(end_time-start_time))
-    print('--------------------Complete Process---------------- ')
     time.sleep(3)
+    print('--------------------Complete Process---------------- ')
     begin_time = time.time()
     for i in range(10):
         f(i)
