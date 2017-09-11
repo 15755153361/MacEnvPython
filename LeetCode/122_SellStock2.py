@@ -13,20 +13,22 @@ class Solution(object):
 
 class TestSolution(unittest.TestCase):
     def setUp(self):
-        Test = Solution()
         pass
 
     def tearDown(self):
         pass
 
-    def Test_01(self):
+    def test_01(self):
+        Test = Solution()
         prices[1,3,6,9,2,1,4,5]
         max_profit = Test.max_profit(prices)
         self.assertEqual(prices,12)
 
-    def Test_02(self):
+    def test_02(self):
+        Test = Solution()
         prices[1,5,6,4,21,1,4,5]
         max_profit = Test.max_profit(prices)
         self.assertEqual(prices,26)
+
 if __name__ == '__main__':
     unittest.main()
