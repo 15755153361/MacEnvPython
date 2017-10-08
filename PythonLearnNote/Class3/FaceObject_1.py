@@ -7,8 +7,8 @@ class Solution(object):
         print("This Student Name is %s , and He's Score is %d"%(self.name,self.score))
 
 if __name__ == "__main__":
-    Student = Solution('linwang',99)
+    Student = Solution('Python',99)
     Student.print_info()
-
-
+    print(Student.name)
+    print(Student.score)
 
