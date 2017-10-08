@@ -9,11 +9,18 @@ def run(info_list,n):
     lock.release()
     print('%s'%info_list)
 
+def run_all(queue,n):
+    lock.acquire()
+    queue.put(n)
+    lock.release()
+    while not queue.empty():
+        print('%s'%queue.get())
 if __name__ == '__main__':
     info = []
+    queue = Queue()
     print('----------------------Process------------------')
     for i in range(10):    
-        p = Process(target=run,args=[info,i])
+        p = Process(target=run_all,args=[queue,i])
         p.start()
         p.join()
 
