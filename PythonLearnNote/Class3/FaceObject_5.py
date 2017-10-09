@@ -25,7 +25,13 @@ Ceaser = Student()
 Student.set_age = set_age
 Ceaser.set_age(33)
 print('Ceaser\'s age is %d'%Ceaser.age)
+
+'''
 Ceaser.score = 99
 print('Ceaser\'s score is %d'%Ceaser.score)
-
-
+'''
+class Xiaoming(Student):
+    pass
+xiaoming = Xiaoming
+xiaoming.score = 100
+print('xiaoming\' score is %d'%xiaoming.score)
