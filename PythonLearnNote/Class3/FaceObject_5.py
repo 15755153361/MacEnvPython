@@ -2,6 +2,7 @@ from types import MethodType
 class Student(object):
     def __init__(self):
         print('Instance Created')
+    __slots__= ('name','age','set_age') #用tuple定义允许绑定的属性名称
 
 Tracy = Student()
 Tracy.age = 20
@@ -24,6 +25,7 @@ Ceaser = Student()
 Student.set_age = set_age
 Ceaser.set_age(33)
 print('Ceaser\'s age is %d'%Ceaser.age)
-
+Ceaser.score = 99
+print('Ceaser\'s score is %d'%Ceaser.score)
 
 
