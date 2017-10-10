@@ -1,3 +1,4 @@
+import logging
 class Solution(object):
     def aDivisionb(self,a,b):
         try:
@@ -6,8 +7,10 @@ class Solution(object):
             print('result = %d'%r)
         except ValueError as e:
             print('ValueError: ',e)
+            logging.exception(e)
         except ZeroDivisionError as e:
             print('ZeroDivisionError: ',e)
+            logging.exception(e)
         else:
             print('no error!')
         finally:
