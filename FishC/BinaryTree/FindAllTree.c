@@ -14,7 +14,7 @@ void CreateBinaryTree(BINARYTREENODE **pRoot)
     scanf("%d",&m);
     if(0 == m)
     {
-	pRoot = NULL;
+	*pRoot = NULL;
     	return;
     }
     else
