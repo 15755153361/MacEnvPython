@@ -34,6 +34,6 @@ class Shark(Fish):
 if __name__ == "__main__":
     fish = Fish()
     fish.move()
-    shark = Fish()
+    shark = Shark()
     shark.eat()
     shark.move()
