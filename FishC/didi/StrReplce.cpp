@@ -48,4 +48,6 @@ int main()
 		printf("%c",arr[i]);
 	}
 	printf("\n");
+	delete []arr;
+	arr = NULL;
 }
